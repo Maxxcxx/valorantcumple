@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jijija</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #8a2be2);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 1rem;
+      width: 95%;
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff69b4;
+      position: relative;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #ffccff;
+      padding: 0 10px;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .image-box {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .image-box img {
+      width: 100%;
+      max-width: 350px; /* Reducción del tamaño máximo de imagen principal */
+      border-radius: 10px;
+      box-shadow: 0 0 15px #dda0dd;
+      object-fit: cover;
+    }
+
+    .additional-images {
+      display: flex;
+      justify-content: space-around;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .additional-images img {
+      width: 100%;
+      max-width: 200px; /* Reducción del tamaño máximo de imágenes adicionales */
+      border-radius: 10px;
+      box-shadow: 0 0 15px #dda0dd;
+      object-fit: cover;
+    }
+
+    .button-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .button-box button {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff69b4;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .button-box button:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      padding: 1rem;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: moveBg 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    /* Estilos para dispositivos pequeños */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .message {
+        font-size: 1rem;
+      }
+      .button-box button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+      .additional-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      .image-box img {
+        max-width: 250px; /* Ajuste del tamaño de la imagen en móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✨¡ola mi chama. FELI CUMPLE!✨</h1>
+    </header>
+
+    <main>
+      <div class="message">
+        <p>Hoy es tu día especial, y como buena duelista, mereces una celebración de alto nivel. Que tus tiros sean precisos y tu corazón feliz. ♥</p>
+      </div>
+      <div class="image-box">
+        <img src="/torta valornat.jpeg" alt="ACA VA FOTO VALO" />
+      </div>
+
+      <div class="additional-images">
+        <img src="/valorant jett2.jpg" alt="PERO SI NO SE PUEDE VER" />
+        <img src="/vipero cumpleañera 3.webp" alt="GG NOMAS" />
+      </div>
+
+      <div class="button-box">
+        <button onclick="showGift()">🎁 Abreme Chama</button>
+        <button onclick="miniGame()">🎯 Mini juego </button>
+        <button onclick="secretMessage()">💌 Mensaje</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Valorant Birthday by: Max07 &copy; 2025</p>
+    </footer>
+  </div>
+
+  <script>
+    function showGift() {
+      alert("🎁 ¡Has desbloqueado una skin legendaria de cariño y amistad! ¡Feliz cumple!");
+    }
+
+    function miniGame() {
+      alert("🔥 HEADSHOT CRÍTICO: Tu nivel de amistad ha subido +100. ¡Feliz cumpleaños!");
+    }
+
+    function secretMessage() {
+      const msg = prompt("la mama de la mama de la mama de lamama   ");
+      if (msg) alert("📨 Tu mensaje fue recibido con mucho amor: " + msg);
+    }
+  </script>
+</body>
+</html>
